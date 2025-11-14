@@ -3,8 +3,7 @@
 ## Stutt lýsing
 Vefsíða sem inniheldur helstu atriði sem þarf til að spila árangursríkan spurningarleik. 
 
-Gögnin koma frá [is-trivia-questions](https://github.com/sveinn-steinarsson/is-trivia-questions) og 
-spurningarnar eru geymdar í .csv skrá sem skiptist upp eftirfarandi: 
+Spurningarnar eru geymdar í .csv skrá sem skiptist upp eftirfarandi: 
 
 | Dálkanúmer | Valfrjálst | Lýsing |
 |---|---|---|
@@ -37,26 +36,23 @@ Verkefnið er keyrt á [Netlify](https://vef1-verkefni10.netlify.app/).
 
 ## JavaScript tól notuð og tækni
 
-### Next.js og React
-Þetta verkefni notar nýjustu útgáfu af **Next.js** og **React**
+### Next.js, React og Tailwind CSS
+Þetta verkefni notar nýjustu útgáfu af **Next.js**, **React** og **Tailwind CSS**
 Uppsetningin var með eftirfarandi skipun:
 ```bash
 npm create-next-app@latest
 ```
 Síðan var svarað:
 - *Would you like to use TypeScript with this project?* No 
-- *Would you like to use ESLint with this project?* Yes
-- *Would you like to use `src/` directory with this project?* Yes
-- *Would you like to use experimental `app/` directory with this project?* Yes
+- *Which linter would you like to use?* Eslint
+- *Would you like to use React Compiler?* Yes
+- *Would you like to use Tailwind CSS?* Yes
+- *Would you like your code inside a `src/`directory?* Yes
+- *Would you like to use App Router?* Yes
+- *Would you like to customize the import alias?* No
 
 Grunnbygging síðunnar er gerð í Next.js með React components fyrir mismunandi hluta hennar.
 
-### Tailwind CSS
-Tailwind CSS fyrir útlit og skipulag síðunnar.
-Uppsetningin var með eftirfarandi skipun:
-```bash
-npm install tailwindcss @tailwindcss/postcss postcss
-```
 Síðan var búið til `postcss.config.mjs` skrá og bætt við `@tailwindcss/postcss`. 
 Útlitið er útfært með klössum beint í HTML og React components. 
 
@@ -74,6 +70,7 @@ npx shadcn@latest add input
 ## Web API
 
 ### Trivia spurningar
+Gögnin koma frá [is-trivia-questions](https://github.com/sveinn-steinarsson/is-trivia-questions).
 
 ## Uppsetning
 
@@ -83,7 +80,7 @@ npx shadcn@latest add input
 git clone <slóð>
 
 # Fara í möppu
-cd hopverkefni2
+cd hop2
 
 # Setja upp dependencies
 npm install
@@ -102,9 +99,8 @@ npm run lint
 
 ## Skráaruppbygging
 ```
-hopverkefni2/
-      ├── .github/workflows    # Github workflow fyrir playwright       
-      ├── public/              # static skrár (myndir)
+hop2/   
+      ├── public/              # static skrár 
       ├── src/                 # source mappa fyrir verkefnið
              ├── app/          # Next.js App router fyrir síður og grunnútlit
                     ├── globals.css      # almennt útlit (Tailwind)
@@ -119,9 +115,6 @@ hopverkefni2/
                     ├── globe.js         # js skrá fyrir hnöttinn
                     ├── searchCountry.js # js skrá fyrir leit í gagnagrunni
                     └── utils.js         # js hjálparföll 
-      ├── tests/               # Playwright prófin
-               ├── example.spec.js       # sýnispróf frá playwright
-               └── tests.spec.js         # 4 próf 
       ├── .gitignore           # hunsa við git commit
       ├── README.md            # þessi skrá
       ├── components.json      # stillingar fyrir shadcn
