@@ -67,6 +67,12 @@ npx shadcn@latest init
 npx shadcn@latest add button
 npx shadcn@latest add input
 ```
+
+### Papa parse 
+Notum [Papa Parse]() til að þátta CSV skrána í JSON format
+```bash
+npm install papaparse
+```
 ## Web API
 
 ### Trivia spurningar
