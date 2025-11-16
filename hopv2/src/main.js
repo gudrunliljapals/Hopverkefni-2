@@ -40,8 +40,9 @@ async function main() {
         }
     });
 
-    document.addEventListener("keypress", async (event) => {
-        if (event.key === "0") {
+    //ég er latur, setti keybinding til að byrja leikinn í flýti
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "p") {
             event.preventDefault();
             if(questions && questions.length > 0){
                 const akvedaSpurningar = document.querySelector(".akveda-spurningar");
