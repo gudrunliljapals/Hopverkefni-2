@@ -1,21 +1,18 @@
-import { fetchQ } from "./lib/fetchQ";
+import { searchQ } from "./lib/searchQ";
 import { results } from "./lib/resultsQ";
 
 
 async function main() {
-    const nrInput = document.querySelector(".form-nr");
-    const nrButton = document.querySelector(".button-nr");
-    const database_path = new URL("./database/questions.csv", import.meta.url);
-    console.log(database_path);
-    const result = await fetchQ(database_path);
-    console.log(result);
+    const form = document.querySelector("#form-nr")
+    const nrInput = form.querySelector("#nr");
+    const nrButton = form.querySelector("#button-nr");
+    const databasePath = new URL("./database/questions.csv", import.meta.url);
 
-    nrInput.addEventListener("keypress", async function(event) {
-
+    nrInput.addEventListener("keypress", async (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
-            nrButton.click();
-
+            const questions = await searchQ(form, databasePath);
+            console.log(questions);
         }
     });
 
