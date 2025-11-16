@@ -21,7 +21,7 @@ export async function fetchQ(database) {
             skipEmptyLines: true,
         });
 
-        console.log(data_parsed.data);
+        // console.log(data_parsed.data);
         return data_parsed.data;
 
     } catch (error) {
@@ -31,24 +31,3 @@ export async function fetchQ(database) {
 }
 
 
-/*
-  try {
-   
-    const csvText = await response.text();
-    console.log("Raw CSV text:", csvText);
-
-    // 2. Parse with Papa
-    const parsed = Papa.parse(csvText, {
-      header: false,        // change to true if first row is header
-      skipEmptyLines: true,
-    });
-
-    console.log("Parsed data:", parsed.data);
-    return parsed.data;
-
-  } catch (error) {
-    console.warn("Error fetching data:", error);
-    return null;
-  }
-}
-  */
