@@ -15,10 +15,14 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "@parcel/transformer-sass": "^2.16.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
     "eslint": "^9.37.0",
     "globals": "^16.5.0",
     "parcel": "^2.16.1",
-    "sass": "^1.94.0"
+    "postcss": "^8.5.6",
+    "sass": "^1.94.0",
+    "tailwindcss": "^4.1.17"
   },
   "dependencies": {
     "papaparse": "^5.5.3"
