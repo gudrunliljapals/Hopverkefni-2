@@ -1,4 +1,5 @@
-import Papa from 'papaparse';
+import Papa from "papaparse";
+
 /**
  * 
  * @param {string} database - string containing path to static database file
@@ -8,15 +9,19 @@ import Papa from 'papaparse';
 export async function fetchQ(database) {
     try {
         const data = await fetch(database);
-        if (!data.ok) {
-            throw new Error(`Fetching data failed: ${data.status} ${data.statusText}`);
-        }
         
+        if (!data.ok || data === null) {
+            throw new Error(`Villa að sækja gögn: ${data.status}`);
+        }
+
         const data_text = await data.text();
-        const data_parsed = Papa.parse(data_text, 
-            {header: false,
-             skipEmptyLines: true
+        // console.log("Gögn frá gagnagrunni \n", data_text);
+        const data_parsed = Papa.parse(data_text, {
+            header: false,
+            skipEmptyLines: true,
         });
+
+        console.log(data_parsed.data);
         return data_parsed.data;
 
     } catch (error) {
@@ -24,3 +29,26 @@ export async function fetchQ(database) {
         return null;
     }
 }
+
+
+/*
+  try {
+   
+    const csvText = await response.text();
+    console.log("Raw CSV text:", csvText);
+
+    // 2. Parse with Papa
+    const parsed = Papa.parse(csvText, {
+      header: false,        // change to true if first row is header
+      skipEmptyLines: true,
+    });
+
+    console.log("Parsed data:", parsed.data);
+    return parsed.data;
+
+  } catch (error) {
+    console.warn("Error fetching data:", error);
+    return null;
+  }
+}
+  */
