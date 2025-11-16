@@ -1,7 +1,7 @@
 import { fetchQ } from "./fetchQ";
 
 // skilgreina path að static spurninga database 
-const database_file = "/questions.csv"
+const database_file = "../database/questions.csv"
 const flokkar = ["Flokkanúmer", "Undirflokkur", "Erfiðleikastig", "Gæðastig", "Spurning", "Svar"];
 
 /**
@@ -18,6 +18,8 @@ export async function searchQ(form) {
 
     try {
         const data_fetched = await fetchQ(database_file);    
+
+        console.log(data_fetched[0])
 
     } catch (e) {
         throw new Error("Fór úrskeiðis...")
