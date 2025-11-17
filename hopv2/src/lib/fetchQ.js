@@ -3,7 +3,7 @@ import Papa from "papaparse";
  * Fall sem tekur inn path á gagnagrunn sem er á textaformi og 
  * skilar út gagnagrunninum á array formi
  * @param {string} database - strengur sem inniheldur URL path á gagnagrunn skrá
- * @returns - gagnagrunnurinn á array formi
+ * @returns {Promise}- gagnagrunnurinn á array formi
  */
 
 export async function fetchQ(database) {

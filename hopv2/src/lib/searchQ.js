@@ -2,9 +2,11 @@ import { fetchQ } from "./fetchQ";
 import { mapRowToObject } from "./mapObject";
 
 /**
- * 
- * @param {*} form 
+ * Fall sem síar út 
  * @param {*} databasePath 
+ * @param {*} nrForm 
+ * @param {*} flokkarSelect 
+ * @param {*} erfidiSelect 
  * @returns 
  */
 export async function searchQ(databasePath, nrForm, flokkarSelect, erfidiSelect) {
