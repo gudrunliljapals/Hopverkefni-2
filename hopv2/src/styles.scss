@@ -1,5 +1,5 @@
 @use "styles/base";
-
+@use "styles/nav.scss";
 @use "styles/footer";
 
 @use "styles/grid";
@@ -9,6 +9,10 @@
 @use "styles/utils";
 
 @use "styles/intro";
+@use "styles/upphafspur.scss";
 @use "styles/gamescreen";
 @use "styles/akvedaspurningar";
-@use "styles/fullscreen"
+@use "styles/fullscreen";
+
+
+

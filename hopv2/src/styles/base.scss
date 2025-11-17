@@ -1,10 +1,15 @@
 /* Global styles and variables */
 
-/* styles/config.scss */
+@font-face {
+  font-family: "Inter";
+  src: url("../font/Inter/static/Inter_18pt-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
 
 // Sass variables 
 $font-size-base: 16px;
-$font-size-headings: 1.5rem;
+$font-size-headings: 6rem;
 $space-100: 0.25rem; 
 $space-200: 0.5rem;
 $space-300: 0.75rem;
@@ -13,32 +18,34 @@ $space-600: 1.5rem;
 $space-800: 2rem;
 $space-4000: 5rem;
 $max-width: 1200px;
-$height-nav: 4rem;
+$height-nav: 5rem;
 $height-img: 160px;
 $columns: 12;
 $gutter: 30px;
 $offset: 20px;
-$spacing: 1rem;
 
 // dervied by the sass variables
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #0c223f;
+$color-protection: rgb(0 0 0 / 45%);
+$color-protection-dark: rgba(0, 0, 0, 0.5);
 $width-offset: calc(100% - (2 * $offset));
 $vertical-space-small: calc($gutter * 1);
 $vertical-space-large: calc($gutter * 1.5);
 $vertical-space: var(--vertical-space-small);
-$border-nav: 2px solid var(--color-background-secondary);
+$border-nav: 2px solid $color-black;
 $border-radius-regular: 5px;
-$color-background-primary: #fff;
-$color-background-secondary: #000;
-$color-protection: rgb(0 0 0 / 35%);
-$font-base-size: 1rem;
-$font-family-base: "Gelasio", "Georgia", serif;
-$font-family-heading: "Atkinson Hyperlegible", "Courier New", monospace;
+$font-family-base: "Inter", sans-serif;
+$font-family-heading: "Inter", sans-serif;
 $grid: true;
 
-body {
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: $font-family-base;
   font-size: $font-size-base;
-  background-color: $color-background-primary;
+  background-color: $color-white;
 }
 
 :root {
@@ -73,13 +80,12 @@ body {
   --border-radius-regular: #($border-radius-regular);
 
   /* Litir */
-  --color-background-primary: #($color-background-primary);
-  --color-background-secondary: #($color-background-secondary);
-  --color-accent: #($color-accent);
+  --color-white: #($color-white);
+  --color-black: #($color-black);
   --color-protection: #($color-protection);
 
   /* Letur stillingar */
-  --font-base-size: #($font-base-size);
+  --font-size-base: #($font-size-base);
   --font-family-base: #($font-family-base);
   --font-family-heading: #($font-family-heading);
 }
@@ -92,8 +98,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background-primary: #000;
-    --color-background-secondary: #fff;
+    --color-black: #000;
+    --color-white: #fff;
     --color-accent: #600;
     --color-protection: rgb(255 255 255 / 50%);
   }

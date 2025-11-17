@@ -96,7 +96,7 @@ async function main() {
                 window.location.href = "spurningarSpila.html" + currentParamsStop;
             });
         } 
-        stopButton.classList.add("hidden");
+        stopButton.style.display = "none";
     }   
         
     // SPILA.HTML virkni
@@ -108,7 +108,10 @@ async function main() {
                 const leikjaskjar = document.querySelector(".leikjaskjar");
                 akvedaSpurningar.style.display = "none"; 
                 leikjaskjar.style.display = "block";
-
+                resultsContainer.style.display = "none";
+                stopButton.style.display = "block";
+                spilaButton.style.display = "none";
+                forsidaButtonURL.style.display = "none";
                 const cQuestions = convertObjecttoArray(questions);
                 console.log(cQuestions);
                 byrjaleik(cQuestions);

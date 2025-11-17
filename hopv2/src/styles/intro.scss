@@ -1,0 +1,55 @@
+/* Styles og uppsetning á intro klasa á index síðunni */
+
+/* styles/intro.scss */
+@use "./base.scss" as *;
+@use "sass:color";
+
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - $height-nav);
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+  background-image: url("../src/myndir/questions_vef.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .protection {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: $color-protection;
+  };
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: auto;
+    
+
+    h1 {
+        margin: 0;
+        padding: $space-300;
+        font-size: $font-size-headings;
+        color: $color-blue;
+        text-shadow: 0 4px 10px $color-protection-dark;
+    };
+
+    .intro-texti {
+        border:  2px solid rgba($color-blue, 0.2);
+        border-radius: $border-radius-regular;
+        background-color: rgba($color-blue, 0.2);
+
+        h2, p {
+          color: $color-white;
+          text-shadow: 0 4px 5px $color-protection-dark;
+        }
+    }
+  };
+}  
+
