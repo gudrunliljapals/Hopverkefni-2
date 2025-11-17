@@ -2,6 +2,7 @@ import { el, empty} from "./elements";
 
 export function results(questions, resultsContainer) {
     if (!questions) return;
+    empty(resultsContainer);
 
     const ul = el("ul", { class: "result-list" });
 
@@ -44,11 +45,12 @@ export function results(questions, resultsContainer) {
                             e.preventDefault();
                             const bakaUrl = new URL(window.location.href);
                             bakaUrl.searchParams.delete("question");
+                            bakaUrl.searchParams.delete("nr");
                             window.history.pushState({}, "", bakaUrl.href);
 
                             results(questions, resultsContainer);
                         });
-
+                    
                     const section = document.createElement("section"); 
                     section.classList.add("main");
                     section.appendChild(titleQ);

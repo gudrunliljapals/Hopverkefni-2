@@ -11,7 +11,8 @@ async function main() {
     const flokkarSelect = document.querySelector("#flokkar");
     const erfidiSelect = document.querySelector("#erfidleikastig");
     const hreinsaButton = nrForm.querySelector("#button-hreinsa");
-    const tilbakaButton = document.getElementById("button-tilbaka");
+    const forsidaButtonURL = document.getElementById("button-forsida");
+    const leitaButton = document.querySelector("#button-leita")
     // database
     const databasePath = new URL("./database/questions.csv", import.meta.url);
     // result container
@@ -34,6 +35,18 @@ async function main() {
         }
     });
 
+    leitaButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+        empty(resultsContainer);
+
+        const questions = await searchQ(databasePath, nrForm, flokkarSelect, erfidiSelect);
+        if (!questions || questions.length === 0) {
+            resultsContainer.textContent = "Engar spurningar til með þessum skilyrðum";
+            return;
+        }
+        results(questions, resultsContainer);
+    });
+
     hreinsaButton.addEventListener("click", (ev) => {
         ev.preventDefault();
         empty(resultsContainer);
@@ -47,17 +60,7 @@ async function main() {
         url.searchParams.delete("flokkur");
         url.searchParams.delete("erfidleikastig");
         window.history.pushState({}, "", url.href);
-    });
-            questions = await searchQ(form, databasePath);
-            console.log(questions);
-        }
-    });
-
-    nrButton.addEventListener("click", async (event) => {
-        event.preventDefault();
-        questions = await searchQ(form, databasePath);
-        console.log(questions);
-    });
+    });         
 
     spilaButton.addEventListener("click", async (event) => {
         event.preventDefault();
@@ -93,10 +96,9 @@ async function main() {
     });
 
 
-
-    tilbakaButton.addEventListener("submit", (e) => {
+    forsidaButtonURL.addEventListener("submit", (e) => {
         const currentParams = window.location.search; 
-        tilbakaButton.href =  "../index.html" + currentParams;
+        forsidaButtonURL.href =  "../index.html" + currentParams;
     });
 }
 
