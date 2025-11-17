@@ -1,0 +1,48 @@
+.leikjaskjar {
+  display: none;
+
+  #spurningar-nanari-upplysingar {
+    margin-bottom: 1.5rem;
+
+    #spurninga-flokkur {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    #spurninga-undirflokkur {
+    }
+
+    #spurninga-erfidleiki {
+
+    }
+  }
+
+  #spurninga-box {
+    background-color: gray;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    max-width: 32rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    margin-right: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background: white; 
+
+    &:hover {
+      background: gray;
+    }
+
+    &:active {
+      background: blue;
+    }
+  }
+}

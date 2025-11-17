@@ -106,13 +106,9 @@ async function main() {
             if(questions && questions.length > 0){
                 const akvedaSpurningar = document.querySelector(".akveda-spurningar");
                 const leikjaskjar = document.querySelector(".leikjaskjar");
-                const forsidaButton = document.querySelector("#button-forsida");
-                akvedaSpurningar.classList.add("hidden");
-                forsidaButton.classList.add("hidden");
-                spilaButton.classList.add("hidden");
-                resultsContainer.classList.add("hidden");
-                stopButton.classList.remove("hidden");
-                leikjaskjar.classList.remove("hidden");
+                akvedaSpurningar.style.display = "none"; 
+                leikjaskjar.style.display = "block";
+
                 const cQuestions = convertObjecttoArray(questions);
                 console.log(cQuestions);
                 byrjaleik(cQuestions);
@@ -131,8 +127,8 @@ async function main() {
             if(questions && questions.length > 0){
                 const akvedaSpurningar = document.querySelector(".akveda-spurningar");
                 const leikjaskjar = document.querySelector(".leikjaskjar");
-                akvedaSpurningar.classList.add("hidden");
-                leikjaskjar.classList.remove("hidden");
+                akvedaSpurningar.style.display = "none"; 
+                leikjaskjar.style.display = "block";
                 const cQuestions = convertObjecttoArray(questions);
                 byrjaleik(cQuestions);
             }
