@@ -37,38 +37,6 @@ Verkefnið er keyrt á [Netlify](https://vef1-verkefni10.netlify.app/).
 
 ## JavaScript tól notuð og tækni
 
-### Next.js, React og Tailwind CSS
-Þetta verkefni notar nýjustu útgáfu af **Next.js**, **React** og **Tailwind CSS**
-Uppsetningin var með eftirfarandi skipun:
-```bash
-npm create-next-app@latest
-```
-Síðan var svarað:
-- *Would you like to use TypeScript with this project?* No 
-- *Which linter would you like to use?* Eslint
-- *Would you like to use React Compiler?* Yes
-- *Would you like to use Tailwind CSS?* Yes
-- *Would you like your code inside a `src/`directory?* Yes
-- *Would you like to use App Router?* Yes
-- *Would you like to customize the import alias?* No
-
-Grunnbygging síðunnar er gerð í Next.js með React components fyrir mismunandi hluta hennar.
-
-Síðan var búið til `postcss.config.mjs` skrá og bætt við `@tailwindcss/postcss`. 
-Útlitið er útfært með klössum beint í HTML og React components. 
-
-### shadcn
-Notum [shadcn](https://ui.shadcn.com/) fyrir útfærslu á UI components
-Uppsetningin var með skipuninni:
-```bash
-npx shadcn@latest init
-```
-Það voru tveir UI components notaðir á síðunni og þeir voru settir upp með:
-```bash
-npx shadcn@latest add button
-npx shadcn@latest add input
-```
-
 ### Papa parse 
 Notum [Papa Parse]() til að þátta CSV skrána í JSON format
 ```bash
