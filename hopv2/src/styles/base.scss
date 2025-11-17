@@ -1,0 +1,100 @@
+/* Global styles and variables */
+
+/* styles/config.scss */
+
+// Sass variables 
+$font-size-base: 16px;
+$font-size-headings: 1.5rem;
+$space-100: 0.25rem; 
+$space-200: 0.5rem;
+$space-300: 0.75rem;
+$space-400: 1rem;
+$space-600: 1.5rem;
+$space-800: 2rem;
+$space-4000: 5rem;
+$max-width: 1200px;
+$height-nav: 4rem;
+$height-img: 160px;
+$columns: 12;
+$gutter: 30px;
+$offset: 20px;
+$spacing: 1rem;
+
+// dervied by the sass variables
+$width-offset: calc(100% - (2 * $offset));
+$vertical-space-small: calc($gutter * 1);
+$vertical-space-large: calc($gutter * 1.5);
+$vertical-space: var(--vertical-space-small);
+$border-nav: 2px solid var(--color-background-secondary);
+$border-radius-regular: 5px;
+$color-background-primary: #fff;
+$color-background-secondary: #000;
+$color-protection: rgb(0 0 0 / 35%);
+$font-base-size: 1rem;
+$font-family-base: "Gelasio", "Georgia", serif;
+$font-family-heading: "Atkinson Hyperlegible", "Courier New", monospace;
+$grid: true;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $color-background-primary;
+}
+
+:root {
+  --font-size-base: #($font-size-base);
+  --font-size-headings: #($font-size-headings);
+
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: #($spacing);
+
+  /* Hámarks og lágmarks breidd á efni */
+  --max-width: #($max-width);
+  --height-img: #($height-img);
+
+  /* Hæð á nav */
+  --height-nav: #($height-nav);
+
+  /* Grind */
+  --columns: #($columns);
+  --gutter: #($gutter);
+  --offset: #($offset);
+
+  /* Breidd á efni með offset */
+  --width-offset: #($width-offset);
+
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space-small: #($vertical-space-small);
+  --vertical-space-large: #($vertical-space-large);
+  --vertical-space: #($vertical-space);
+
+  /* Border breiddir */
+  --border-nav: #($border-nav);
+  --border-radius-regular: #($border-radius-regular);
+
+  /* Litir */
+  --color-background-primary: #($color-background-primary);
+  --color-background-secondary: #($color-background-secondary);
+  --color-accent: #($color-accent);
+  --color-protection: #($color-protection);
+
+  /* Letur stillingar */
+  --font-base-size: #($font-base-size);
+  --font-family-base: #($font-family-base);
+  --font-family-heading: #($font-family-heading);
+}
+
+@media (width >= 700px) {
+  :root {
+    --vertical-space: var(--vertical-space-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #000;
+    --color-background-secondary: #fff;
+    --color-accent: #600;
+    --color-protection: rgb(255 255 255 / 50%);
+  }
+}
