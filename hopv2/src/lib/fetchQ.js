@@ -2,7 +2,7 @@ import Papa from "papaparse";
 /**
  * 
  * @param {string} database - string containing URL path to static database file
- * @returns -
+ * @returns - a parsed file with database in array form
  */
 
 export async function fetchQ(database) {

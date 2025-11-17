@@ -1,12 +1,15 @@
 import { searchQ } from "./lib/searchQ";
 import { results } from "./lib/resultsQ";
+import { empty } from "./lib/elements";
+
 import { byrjaleik } from "./lib/pubquiz";
 
 async function main() {
     const form = document.querySelector("#form-nr")
     const nrInput = form.querySelector("#nr");
-    const nrButton = form.querySelector("#button-nr");
+    const hreinsaButton = form.querySelector("#button-hreinsa");
     const databasePath = new URL("./database/questions.csv", import.meta.url);
+    const resultsContainer = document.querySelector("#spurningar-results")
 
     const spilaButton = document.querySelector("#button-spila");
     var questions = null;
@@ -14,6 +17,17 @@ async function main() {
     nrInput.addEventListener("keypress", async (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
+            empty(resultsContainer);
+
+            const questions = await searchQ(form, databasePath);
+            const displayResults = results(questions, resultsContainer);
+        }
+    });
+
+    hreinsaButton.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        empty(resultsContainer);
+    });
             questions = await searchQ(form, databasePath);
             console.log(questions);
         }
