@@ -1,6 +1,6 @@
 import { fetchQ } from "./fetchQ";
 
-// skilgreina path að static spurninga database 
+// skilgreina path að spurninga database 
 const flokkar = ["Flokkanúmer", "Undirflokkur", "Erfiðleikastig", "Gæðastig", "Spurning", "Svar"];
 
 /**
@@ -12,8 +12,6 @@ const flokkar = ["Flokkanúmer", "Undirflokkur", "Erfiðleikastig", "Gæðastig"
 export async function searchQ(form, databasePath) {
     const number = form.querySelector("#nr");
     const nr = parseInt(number.value, 10);
-
-    console.log(nr);
 
     if (Number.isNaN(nr) || nr <= 0) {
         return [];
@@ -34,18 +32,26 @@ export async function searchQ(form, databasePath) {
         const dataFetchedCopy = [...dataFetched];
         const count = Math.min(nr, dataFetchedCopy.length);
 
-        for (let i = 0; i <= count && dataFetchedCopy.length > 0; i++) {
+        for (let i = 0; i < count && dataFetchedCopy.length > 0; i++) {
             const randomQIndex = Math.floor(Math.random() * dataFetchedCopy.length);
             const [pickedQ] = dataFetchedCopy.splice(randomQIndex, 1);
             randomNrQ.push(pickedQ);
         }
-        return randomNrQ;
+
+        const randomNrQflokkar = randomNrQ.map((row) => {
+            const object = {};
+            flokkar.forEach((key, index) => {
+                object[key] = row[index] ?? "";
+            });
+            return object
+        });
+
+        return randomNrQflokkar;
 
     } catch (e) {
         console.error(e);
         throw new Error("Fór úrskeiðis...")
     }
 }
-
 
 

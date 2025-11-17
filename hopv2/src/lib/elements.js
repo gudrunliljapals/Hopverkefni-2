@@ -17,7 +17,7 @@ export function el(name, attributes = {}, ...children) {
   }
 
   for (const child of children) {
-    if (!child) {
+    if (child === null || child === undefined) {
       console.warn("Child is null", name, attributes);
 
       continue;
