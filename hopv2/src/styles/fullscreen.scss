@@ -1,12 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :fullscreen {
   background: white;
 }
 
-/* For Firefox */
 :-moz-full-screen {
   background: white;
 }

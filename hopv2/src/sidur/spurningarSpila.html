@@ -8,14 +8,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hópverkefni 2 - Pubquiz</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles.scss" />
     <script type="module" src="../main.js"></script>
   </head>
 
-  <body class="flex items-center justify-center">
-    <main class="text-center bg-white p-8 rounded-xl shadow-lg w-full max-w-3xl">
+  <body>
+    <main>
       <div class="akveda-spurningar">
-        <h2 class="text-3xl font-bold mb-6">Hannaðu spurningaleikinn þinn!</h2>
+        <h2>Hannaðu spurningaleikinn þinn!</h2>
         <form id="form-nr" action="#" method="get" aria-label="Number of questions chosen">
             <input  id="nr" name="nr" type="number" min="1" step="1" inputMode="search" placeholder="i.e. 1, 2..."/>
             <button id="button-leita">Leita</button>
@@ -41,36 +41,36 @@
             <option value="Erfið">Erfið</option>
           </select>
         </form>
-      </div> 
 
-      <div class="spila mt-4">
+        <div class="spila">
           <button id="button-spila"> Spila</button>
-      </div>
-      
-      <a id="button-forsida" href="../index.html">Fara aftur á forsíðu</a>
+        </div>
+        
+        <a id="button-forsida" href="../index.html">Fara aftur á forsíðu</a>
 
-      <div id="spurningar-results" class="spurningar-results"> </div>
+        <div id="spurningar-results" class="spurningar-results"> </div>
 
+      </div> 
       <div id="game-screen" class="leikjaskjar hidden">
-        <h1 class="text-3xl font-bold mb-6">Pubquiz</h1>
-        <h3 class="text-xl mb-6 ">
+        <h1>Pubquiz</h1>
+        <h3>
             Hægt er að fletta fram og tilbaka á milli spurninga með vinstri og hægri
             örva tökkunum ásamt því að geta birt svarið og falið það með spacebar takkanum.
             Einnig er hægt að fara í fullscreen með því að ýta á takkann "f". Njótið!
         </h3>
         <div id="spurningar-nanari-upplysingar">
-            <div id="spurninga-flokkur" class="text-3xl font-bold mb-6"></div>
+            <div id="spurninga-flokkur"></div>
             <div id="spurninga-undirflokkur"></div>
             <div id="spurninga-erfidleiki"></div>
         </div>
-        <div id="spurninga-box" class="bg-gray-50 p-8 rounded-xl shadow-xl text-center max-w-lg text-xl font-medium"></div>
+        <div id="spurninga-box"></div>
         <button id="button-til-baka">Til baka</button>
         <button id="button-svar">Sýna svar</button>
         <button id="button-next">Næsta</button>
-      </div>
 
-      <div id="stop">
+        <div id="stop">
         <a id="button-stop" href="spurningarSpila.html">Hætta að spila</a>
+      </div>
       </div>
     </main>
     
