@@ -28,6 +28,7 @@ Spurningarnar eru geymdar í .csv skrá sem skiptist upp eftirfarandi:
 - Grunnvirkni
 - Fullscreen API
 - Nánari gögn fyrir spurningar
+- Filter
 - Miklu fleiri surningar
 
 ## Vefþjónn og linkur
@@ -106,31 +107,23 @@ npm run lint
 ## Skráaruppbygging
 ```
 hop2/   
-      ├── public/              # static skrár 
+      ├── font/              # static skrár 
       ├── src/                 # source mappa fyrir verkefnið
              ├── app/          # Next.js App router fyrir síður og grunnútlit
                     ├── globals.css      # almennt útlit (Tailwind)
                     ├── globe.svg        # SVG mynd 
                     ├── layout.jsx       # layout fyrir all efni
                     └── page.jsx         # aðalsíðan 
-             ├── components/ui/          # UI components úr shadcn
-                              ├── button.jsx 
-                              └── input.jsx
              └── lib/          # js hjálparföll og viðmót fyrir API
                     ├── fetchapi.js      # sækir gögn frá REST Web API
                     ├── globe.js         # js skrá fyrir hnöttinn
                     ├── searchCountry.js # js skrá fyrir leit í gagnagrunni
                     └── utils.js         # js hjálparföll 
-      ├── .gitignore           # hunsa við git commit
+      ├──.gitignore           # hunsa við git commit
       ├── README.md            # þessi skrá
-      ├── components.json      # stillingar fyrir shadcn
       ├── eslint.config.mjs    # stillingar fyrir eslint
-      ├── jsconfig.json        # stillingar fyrir import ofl.
-      ├── next.config.mjs      # stillingar fyrir Next.js
       ├── package-lock.json    # læst dependencies
-      ├── package.json         # dependencies og npm script/keyrslur
-      ├── playwright.config.js # stillingar fyrir playwright prófanir
-      └── postcss.config.mjs   # stillingar fyrir Tailwind/postcss
+      └── package.json         # dependencies og npm script/keyrslur
 ```
 ## Höfundar
 
