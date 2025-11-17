@@ -30,10 +30,10 @@ export function results(questions, resultsContainer) {
                     answerQ.style.fontSize = "16px";
 
                     const metaQ = document.createElement("p");
-                    metaQ.textContent = `Flokkur: ${Q.Flokkanúmer ?? "-"} | ` +
-                            `Undirflokkur: ${Q.Undirflokkur ?? "-"} | ` +
-                            `Erfiðleikastig: ${Q.Erfiðleikastig ?? "-"} | ` +
-                            `Gæðastig: ${Q.Gæðastig ?? "-"}`;
+                    metaQ.textContent = `Flokkur: ${Q.Flokkanúmer ?? ""} | ` +
+                            `Undirflokkur: ${Q.Undirflokkur ?? ""} | ` +
+                            `Erfiðleikastig: ${Q.Erfiðleikastig ?? ""} | ` +
+                            `Gæðastig: ${Q.Gæðastig ?? ""}`;
                     metaQ.style.fontSize = "14px";
                     metaQ.style.fontStyle = "italic";
 
