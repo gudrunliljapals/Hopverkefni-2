@@ -5,10 +5,17 @@ import { empty } from "./lib/elements";
 import { byrjaleik } from "./lib/pubquiz";
 
 async function main() {
-    const form = document.querySelector("#form-nr")
-    const nrInput = form.querySelector("#nr");
-    const hreinsaButton = form.querySelector("#button-hreinsa");
+    // filter parameteres
+    const nrForm = document.querySelector("#form-nr")
+    const nrInput = nrForm.querySelector("#nr");
+    const flokkarSelect = document.querySelector("#flokkar");
+    const erfidiSelect = document.querySelector("#erfidleikastig");
+    const hreinsaButton = nrForm.querySelector("#button-hreinsa");
+    const forsidaButtonURL = document.getElementById("button-forsida");
+    const leitaButton = document.querySelector("#button-leita")
+    // database
     const databasePath = new URL("./database/questions.csv", import.meta.url);
+    // result container
     const resultsContainer = document.querySelector("#spurningar-results")
 
     const spilaButton = document.querySelector("#button-spila");
@@ -19,25 +26,41 @@ async function main() {
             event.preventDefault();
             empty(resultsContainer);
 
-            const questions = await searchQ(form, databasePath);
-            const displayResults = results(questions, resultsContainer);
+            const questions = await searchQ(databasePath, nrForm, flokkarSelect, erfidiSelect);
+            if (!questions || questions.length === 0) {
+                resultsContainer.textContent = "Engar spurningar til með þessum skilyrðum";
+                return;
+            }
+            results(questions, resultsContainer);
         }
+    });
+
+    leitaButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+        empty(resultsContainer);
+
+        const questions = await searchQ(databasePath, nrForm, flokkarSelect, erfidiSelect);
+        if (!questions || questions.length === 0) {
+            resultsContainer.textContent = "Engar spurningar til með þessum skilyrðum";
+            return;
+        }
+        results(questions, resultsContainer);
     });
 
     hreinsaButton.addEventListener("click", (ev) => {
         ev.preventDefault();
         empty(resultsContainer);
-    });
-            questions = await searchQ(form, databasePath);
-            console.log(questions);
-        }
-    });
 
-    nrButton.addEventListener("click", async (event) => {
-        event.preventDefault();
-        questions = await searchQ(form, databasePath);
-        console.log(questions);
-    });
+        nrForm.reset();
+        flokkarSelect.reset();
+        erfidiSelect.reset();
+
+        const url = new URL(window.location.href);
+        url.searchParams.delete("nr");
+        url.searchParams.delete("flokkur");
+        url.searchParams.delete("erfidleikastig");
+        window.history.pushState({}, "", url.href);
+    });         
 
     spilaButton.addEventListener("click", async (event) => {
         event.preventDefault();
@@ -73,10 +96,14 @@ async function main() {
     });
 
 
-
+    forsidaButtonURL.addEventListener("submit", (e) => {
+        const currentParams = window.location.search; 
+        forsidaButtonURL.href =  "../index.html" + currentParams;
+    });
 }
 
 main();
+
 
 
 

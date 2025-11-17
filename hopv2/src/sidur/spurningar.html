@@ -8,22 +8,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hópverkefni 2 - Pubquiz</title>
-    <link rel="stylesheet" href="../scss/main.scss" />
+    <link rel="stylesheet" href="../styles.css" />
     <script type="module" src="../main.js"></script>
   </head>
 
   <body>
     <main>
-      <div class="spurningar">
-        <h2>Sláður inn nr spurninga</h2>
+      <div class="filter-spurningar">
+        <h2>Hannaðu spurningaleikinn þinn!</h2>
         <form id="form-nr" action="#" method="get" aria-label="Number of questions chosen">
-            <input  id="nr" name="nr" type="number" min="1" step="1" inputMode="search" placeholder="leita"/>
-            <button id="button-nr">Leita</button>
+            <input  id="nr" name="nr" type="number" min="1" step="1" inputMode="search" placeholder="i.e. 1, 2..."/>
+            <button id="button-leita">Leita</button>
             <button id="button-hreinsa">Hreinsa spurningarlista</button>
         </form>
-      </div>
+        <form id="form-flokkar" action="#" method="get" aria-label="Filter questions based on category">
+            <select id="flokkar">
+              <option value="">Allir flokkar</option>
+              <option value="Almenn kunnátta">Almenn kunnátta</option>
+              <option value="Náttúra og vísindi">Náttúra og vísindi</option>
+              <option value="Bókmenntir og listir">Bókmenntir og listir</option>
+              <option value="Saga">Saga</option>
+              <option value="Landafræði">Landafræði</option>
+              <option value="Skemmtun og afþreying">Skemmtun og afþreying</option>
+              <option value="Íþróttir og tómstundir">Íþróttir og tómstundir</option>
+            </select>
+        </form>
+        <form id="form-erfidleikastig">
+          <select id="erfidleikastig">
+            <option value="">Öll erfiðleikastig</option>
+            <option value="Létt">Létt</option>
+            <option value="Meðal">Meðal</option>
+            <option value="Erfið">Erfið</option>
+          </select>
+        </form>
+      </div> 
 
-      <a id="button-tilbaka" href="../index.html">Fara aftur á forsíðu</a>
+      <div class="spila">
+        <button id="button-spila"> Spila</button>
+      </div>
+      <a href="spila.html">spila leikinn</a>
+
+      <a id="button-forsida" href="../index.html">Fara aftur á forsíðu</a>
 
       <div id="spurningar-results" class="spurningar-results"> </div>
     </main>
@@ -33,3 +58,5 @@
     </footer>
   </body>
 </html>
+
+

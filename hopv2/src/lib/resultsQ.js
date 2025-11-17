@@ -2,6 +2,7 @@ import { el, empty} from "./elements";
 
 export function results(questions, resultsContainer) {
     if (!questions) return;
+    empty(resultsContainer);
 
     const ul = el("ul", { class: "result-list" });
 
@@ -30,10 +31,10 @@ export function results(questions, resultsContainer) {
                     answerQ.style.fontSize = "16px";
 
                     const metaQ = document.createElement("p");
-                    metaQ.textContent = `Flokkur: ${Q.Flokkanúmer ?? "-"} | ` +
-                            `Undirflokkur: ${Q.Undirflokkur ?? "-"} | ` +
-                            `Erfiðleikastig: ${Q.Erfiðleikastig ?? "-"} | ` +
-                            `Gæðastig: ${Q.Gæðastig ?? "-"}`;
+                    metaQ.textContent = `Flokkur: ${Q.Flokkanúmer ?? ""} | ` +
+                            `Undirflokkur: ${Q.Undirflokkur ?? ""} | ` +
+                            `Erfiðleikastig: ${Q.Erfiðleikastig ?? ""} | ` +
+                            `Gæðastig: ${Q.Gæðastig ?? ""}`;
                     metaQ.style.fontSize = "14px";
                     metaQ.style.fontStyle = "italic";
 
@@ -44,11 +45,12 @@ export function results(questions, resultsContainer) {
                             e.preventDefault();
                             const bakaUrl = new URL(window.location.href);
                             bakaUrl.searchParams.delete("question");
+                            bakaUrl.searchParams.delete("nr");
                             window.history.pushState({}, "", bakaUrl.href);
 
                             results(questions, resultsContainer);
                         });
-
+                    
                     const section = document.createElement("section"); 
                     section.classList.add("main");
                     section.appendChild(titleQ);
