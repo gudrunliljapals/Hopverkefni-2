@@ -118,4 +118,5 @@ hop2/
 ```
 ## Höfundar
 Guðrún Lilja Pálsdóttir *[gudrunliljapals](https://github.com/gudrunliljapals)* **glp5**
+
 Davíð Ásmundsson  *[DavidAsmunds](https://github.com/DavidAsmunds)*  **daa41**
