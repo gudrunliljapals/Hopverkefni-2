@@ -3,10 +3,9 @@
 ## Stutt lýsing
 Vefsíða sem útfærir spurningarleik **Pubquiz style** með öllum helstu grunnvirkni sem þarf til að spila árangursríkan spurningarleik. 
 
-Spurningarnar eru lesnar úr `.csv` skrá sem er breytt í JSON format og birtir spurningur í
+Spurningarnar eru lesnar úr `.csv` skrá sem er breytt í JSON format og birtir spurningar.
 
-
-sem skiptist upp eftirfarandi: 
+Spurningarnar skiptast upp á eftirfarandi hátt: 
 
 | Dálkanúmer | Valfrjálst | Lýsing |
 |---|---|---|
@@ -45,7 +44,7 @@ Notum [Papa Parse]() til að þátta CSV skrána í JSON format
 ```bash
 npm install papaparse
 ```
-## Web API
+## Gagnagrunnur
 
 ### Trivia spurningar
 Gögnin koma frá [is-trivia-questions](https://github.com/sveinn-steinarsson/is-trivia-questions).
@@ -58,7 +57,7 @@ Gögnin koma frá [is-trivia-questions](https://github.com/sveinn-steinarsson/is
 git clone <slóð>
 
 # Fara í möppu
-cd hop2
+cd hopv2
 
 # Setja upp dependencies
 npm install
@@ -69,12 +68,16 @@ npm run dev
 
 ### Linting
 
-Verkefnið notar ESLint:
+Verkefnið notar ESLint fyrir Javascript:
 ```bash
 # Keyra lint
 npm run lint
 ```
-
+og Stylelint fyrir scss: 
+```bash
+# Keyra lint
+npm run lint:scss
+```
 ## Skráaruppbygging
 ```
 README.md  # þessi skrá
@@ -114,5 +117,5 @@ hop2/
       └── package.json         # dependencies og npm script/keyrslur
 ```
 ## Höfundar
-Guðrún Lilja Pálsdóttir *[gudrunliljapals](https://github.com/gudrunliljapals)* 
-Davíð Ásmundsson  *[DavidAsmunds](https://github.com/DavidAsmunds)* 
+Guðrún Lilja Pálsdóttir *[gudrunliljapals](https://github.com/gudrunliljapals)* **glp5**
+Davíð Ásmundsson  *[DavidAsmunds](https://github.com/DavidAsmunds)*  **daa41**
