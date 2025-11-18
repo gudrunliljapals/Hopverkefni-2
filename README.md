@@ -27,11 +27,36 @@ Spurningarnar skiptast upp á eftirfarandi hátt:
 | 7 | Íþróttir og tómstundir |
 
 ## Grunnvirkni og aukavirkni 
-- Grunnvirkni
-- Fullscreen API
-- Nánari gögn fyrir spurningar
-- Filter
-- Miklu fleiri surningar
+Virkni síðunnar skiptist í eftifarandi:
+
+# Leita og birta spurningar
+- Sækja og birta spurningar úr CSV gagnagrunni
+- Þátta gögnin með Papa Parse 
+- Leita og sía gagnagrunninn miðað við hvað notandi vill, þetta er hægt eftir:
+      - Flokkanafni
+      - Erfiðaleikastigi
+- Fjöldi spurninga sem birtast er alltaf handahófskenndt valið í gagnagrunninum út frá þeim skilyrðum sem notandi velur
+      - Notandi setur inn hversu margar spurningar hann vill fá í leikinn (lágmark 1)
+
+# Nánari upplýsingar um spurningu
+- Með hverri spurningu birtast helstu upplýsingar um hana sem fylgja úr gagnagrunninum
+- Ef notandi ýtir á spurninguna þá birtast þessar upplýsingar:
+      - Svar við spurningunni
+      - Flokkanafn
+      - Undirflokkur (ef skilgreindur, annars tómt)
+      - Erfiðleikastig
+      - Gæðastig (ef skilgreint, annars tómt)
+- Til að fara tilbaka í upphaflegu spurningarnar þá er takki fyrir það neðst
+
+# Spilaumhverfið 
+- Þegar notandi hefur valið sér spurningarnar fyrir leikinn þá ýtir hann á `-> SPILA <-` og spurningarnar sem hann valdi verða spilaðar í öðru sérstöku umhverfi á sömu síðu
+- Í spilaumhverfinu er hægt:
+      - að hafa leikinn í fullscreen til að bæta leikjaupplifunina
+      - ýta á **esc** á lyklaborðinu til að fara úr fullscreen
+      - fara áfram/tilbaka um spurningarnar með tökkum fyrir neðan spurninguna
+      - birta svörin við spurningunni með takka sem er fyrir neðan spurninguna
+      - Fyrir ofan spurninguna birtist flokkanafn og erfiðleikastig
+      - Til að hætta að spila er sér takki neðst sem tengir notanda aftur á upphafsspunkt spurningarleiksins
 
 ## Vefþjónn og linkur
 
