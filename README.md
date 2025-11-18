@@ -64,7 +64,7 @@ Virkni síðunnar skiptist í eftifarandi:
 
 ## Vefþjónn og linkur
 
-Verkefnið er keyrt á [Netlify](https://vef1-verkefni10.netlify.app/).
+Verkefnið er keyrt á [Netlify](https://guileless-cannoli-d26aa5.netlify.app/).
 
 ## JavaScript tól notuð og tækni
 
