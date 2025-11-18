@@ -29,7 +29,7 @@ Spurningarnar skiptast upp á eftirfarandi hátt:
 ## Grunnvirkni og aukavirkni 
 Virkni síðunnar skiptist í eftifarandi:
 
-# Leita og birta spurningar
+### Leita og birta spurningar
 - Sækja og birta spurningar úr CSV gagnagrunni
 - Þátta gögnin með Papa Parse 
 - Leita og sía gagnagrunninn miðað við hvað notandi vill, þetta er hægt eftir:
@@ -38,7 +38,7 @@ Virkni síðunnar skiptist í eftifarandi:
 - Fjöldi spurninga sem birtast er alltaf handahófskenndt valið í gagnagrunninum út frá þeim skilyrðum sem notandi velur
       - Notandi setur inn hversu margar spurningar hann vill fá í leikinn (lágmark 1)
 
-# Nánari upplýsingar um spurningu
+### Nánari upplýsingar um spurningu
 - Með hverri spurningu birtast helstu upplýsingar um hana sem fylgja úr gagnagrunninum
 - Ef notandi ýtir á spurninguna þá birtast þessar upplýsingar:
       - Svar við spurningunni
@@ -48,7 +48,7 @@ Virkni síðunnar skiptist í eftifarandi:
       - Gæðastig (ef skilgreint, annars tómt)
 - Til að fara tilbaka í upphaflegu spurningarnar þá er takki fyrir það neðst
 
-# Spilaumhverfið 
+### Spilaumhverfið 
 - Þegar notandi hefur valið sér spurningarnar fyrir leikinn þá ýtir hann á `-> SPILA <-` og spurningarnar sem hann valdi verða spilaðar í öðru sérstöku umhverfi á sömu síðu
 - Í spilaumhverfinu er hægt:
       - að hafa leikinn í fullscreen til að bæta leikjaupplifunina
