@@ -5,7 +5,11 @@ import { byrjaleik } from "./lib/pubquiz";
 import { convertObjecttoArray } from "./lib/convertGame";
 
 /**
+ * Keyrir síðuna í heild
+ * Stillir upphafstillingar, villumeðhöndlun, sýnileika og button virkni
  * 
+ * @async
+ * @returns {Promise<void>} 
  */
 
 async function main() {
@@ -19,6 +23,10 @@ async function main() {
     const leitaButton = document.querySelector("#button-leita");
     const spilaButton = document.querySelector("#button-spila");
     const stopButton = document.querySelector("#button-stop");
+    const nav = document.querySelector("nav");
+    const footer = document.querySelector("footer");
+    const p = document.querySelector("#texti");
+    const h2 = document.querySelector("h2");
     const resultsContainer = document.querySelector("#spurningar-results");
 
     // gagnagrunns URL
@@ -42,6 +50,7 @@ async function main() {
                         return;
                     }
                     results(questions, resultsContainer);
+                    resultsContainer.style.display = "block";
                 }
             });
         }
@@ -58,6 +67,7 @@ async function main() {
                     return;
                 }
                 results(questions, resultsContainer);
+                resultsContainer.style.display = "block";
             });
         }
         
@@ -70,6 +80,7 @@ async function main() {
                 nrForm.reset();
                 flokkarSelect.selectedIndex = 0;
                 erfidiSelect.selectedIndex = 0;
+                resultsContainer.style.display = "none";
 
                 const url = new URL(window.location.href);
                 url.searchParams.delete("nr");
@@ -112,6 +123,10 @@ async function main() {
                 stopButton.style.display = "block";
                 spilaButton.style.display = "none";
                 forsidaButtonURL.style.display = "none";
+                nav.style.display = "none";
+                footer.style.display = "none";
+                p.style.display = "none";
+                h2.style.display = "none";
                 const cQuestions = convertObjecttoArray(questions);
                 console.log(cQuestions);
                 byrjaleik(cQuestions);
@@ -123,7 +138,7 @@ async function main() {
         });
     }
     
-    //ég er latur, setti keybinding til að byrja leikinn í flýti
+    //keybinding til að byrja leikinn í flýti
     document.addEventListener("keydown", (event) => {
         if (event.key === "p") {
             event.preventDefault();

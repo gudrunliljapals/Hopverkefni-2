@@ -1,0 +1,325 @@
+/* Styles og uppsetning á akvedaspurningar klasa á spurningarSpila síðunni */
+
+/* styles/akvedaspurningar.scss */
+@use "./base.scss" as *;
+@use "sass:color";
+
+.main-spurningar {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-600;
+
+  h2 {
+      font-size: $font-size-underheadings;   
+      font-weight: bold;
+      margin-bottom: $space-200 * 2; 
+      margin-top: $space-4000;
+      padding-top: $space-4000;
+      text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.akveda-spurningar {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: $space-800 * 2; 
+  width: 100%;
+
+  #spurningar-results {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: start;
+    display: none;
+    background: $color-white;
+    padding: $space-800;
+    border-radius: $border-radius-regular;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+    max-height: 60vh;
+    overflow-y: auto;
+
+    .result-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $space-200;
+      text-decoration: none;
+    }
+
+    .result-item {
+      text-decoration: none;
+      padding: $space-100 $space-300;
+      border-radius: $border-radius-regular;
+      transition: background-color 0.15s ease, transform 0.15s ease,
+      box-shadow 0.15s ease;
+
+      &:hover {
+        background-color: color.scale($color-blue, $lightness: 40%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgb(0 0 0 / 6%);
+        border: 1px solid color.scale($color-blue, $lightness: -10%);
+      }
+    }
+
+    .spurningar-link {
+      text-decoration: none;
+      color: $color-blue;
+      font-size: $font-size-base;
+      font-weight: 500;
+    }
+
+    .result-item:hover .question-link {
+      text-decoration: underline;
+      color: $color-white;
+    }
+
+    .spurningar-detail {
+      display: flex;
+      flex-direction: column;
+      gap: $space-400;
+    }
+
+    .spurningar-title {
+      font-size: $font-size-underheadings;
+      font-weight: 700;
+      margin-top: 0;
+      padding-top: 0;
+      margin-bottom: $space-200;
+    }
+
+    .spurningar-svar {
+      padding: $space-300 $space-400;
+      font-size: $font-size-base;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $space-200 $space-400;
+      margin-top: $space-300;
+      font-size: $font-size-base;
+      color: $color-blue;
+    }
+
+    .meta-item {
+      padding: $space-100 $space-200;
+      border-radius: $border-radius-regular;
+      font-style: italic;
+    }
+
+    .tilbaka-linkur {
+      align-self: flex-start;
+      margin-top: $space-400;
+      padding: $space-100 $space-400;
+      border-radius: $border-radius-regular;
+      text-decoration: none;
+      border: none;
+      background-color: $color-blue;
+      color: $color-white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 16px rgb(0 0 0 / 20%);
+        background-color: color.scale($color-blue, $lightness: 5%);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 3px 8px rgb(0 0 0 / 15%);
+      }
+    }
+  }
+
+  .filter {
+    grid-column: 1;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    gap: $space-800;
+    position: relative;
+    align-self: start;
+    background: $color-white;
+    padding: $space-800;
+    border-radius: $border-radius-regular;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+    margin-top: $space-100;
+
+    select {
+        appearance: none;
+        width: 100%;
+        padding: $space-300 $space-400;
+        border-radius: $border-radius-regular;
+        border: 1px solid rgba($color-blue, 0.1);
+        background: linear-gradient(to bottom, #fff, #f9f9f9);
+        font-size: $font-size-base;
+        transition: 0.2s ease;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23222'><path d='M4 6l4 4 4-4'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+      }
+
+      select:hover {
+        border-color: $color-blue;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: $color-blue;
+        box-shadow: 0 0 0 4px rgba($color-blue, 0.1);
+      }
+
+    .leita {
+        display: flex;
+        gap: $space-400;
+        padding-bottom: $space-400;
+        
+
+        input {
+          flex: 1;
+          padding: $space-100 $space-300;
+          border: 1px solid rgba($color-blue, 0.1);
+          
+        }
+
+        button {
+          white-space: nowrap;
+          padding: $space-100 $space-400;
+          border-radius: $border-radius-regular;
+          border: none;
+          background: $color-blue;
+          color: $color-white; 
+          cursor: pointer;
+          font-size: $font-size-base;
+          margin-right: $space-200;
+
+          &:hover {
+            background: $color-blue;
+            color: $color-white;
+          }
+        }
+    }
+
+    #button-hreinsa {
+      align-self: flex-start;
+      padding: $space-200 $space-400;
+      border-radius: $border-radius-regular;
+      border: none;
+      background: $color-blue;
+      color: $color-white; 
+      cursor: pointer;
+      font-size: $font-size-base;
+      margin-right: $space-200;
+
+      &:hover {
+        background: $color-blue;
+        color: $color-white;
+      }
+    }
+  }
+
+  .spila {
+    grid-column: 1; 
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #button-spila {
+      padding: $space-100 $space-300;
+      border-radius: $border-radius-regular;
+      border: none;
+      background-color: color.scale($color-blue, $lightness: 10%);
+      color: $color-white;
+      font-size: $font-size-underheadings;   
+      font-weight: 700;                      
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgb(0 0 0 / 20%);  
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px rgb(0 0 0 / 22%);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 8px 18px rgb(0 0 0 / 15%);
+      }
+    }
+  }
+  
+  #button-forsida {
+    grid-column: 1;
+    grid-row: 3;
+    position: static;
+    margin-top: $space-400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-200 $space-600;
+    border-radius: $border-radius-regular;
+    border: none;
+    background-color: $color-blue;
+    color: $color-white;
+    font-size: $font-size-base;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px $color-protection-dark;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+        transform: translate(-2px);
+        box-shadow: 0 12px 24px $color-protection-dark;
+        background-color: color.scale($color-blue, $lightness: 5%);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 14px $color-protection-dark;
+    }
+
+  }
+}
+
+
+@media (width <= 768px) {
+  .akveda-spurningar {
+    grid-template-columns: 1fr;
+    padding-left: $space-600;
+    padding-right: $space-600;
+
+    & > form,
+    .spila,
+    #button-forsida,
+    #spurningar-results {
+      grid-column: 1;
+    }
+
+    #button-forsida {
+      align-items: center;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+

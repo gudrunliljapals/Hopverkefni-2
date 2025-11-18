@@ -1,48 +1,131 @@
+/* hönnun á spurningaleiks síðunni þegar leikurinn er byrjaður */ 
+
+/* styles/gamescreen.scss */
+@use "./base.scss" as *;
+@use "sass:color";
+
 .leikjaskjar {
+  max-width: $max-width;
   display: none;
+  margin: 0 auto;
+  padding: $space-800 * 2 $space-800;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-800;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    padding: $space-300;
+    font-size: $font-size-headings;
+    color: $color-blue;
+    text-shadow: 0 4px 10px $color-protection-dark;
+  }
+
+  h3 {
+    font-size: $font-size-underheadings - 1.7;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
 
   #spurningar-nanari-upplysingar {
-    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: $space-400;
+    justify-content: center;
+    width: auto;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-top: $space-400;
 
-    #spurninga-flokkur {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
+    > div {
+      padding: $space-100 $space-400;
+      border-radius: $border-radius-regular;
+      font-size: $font-size-base;
+      font-style: italic;
+      text-align: left;
     }
 
-    #spurninga-undirflokkur {
+    #spurninga-flokkur {
+      grid-column: 1;
+      grid-row: 1;
+      font-weight: 700;
+      margin-bottom: 0;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     #spurninga-erfidleiki {
-
+      grid-column: 1;
+      grid-row: 2;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
   #spurninga-box {
-    background-color: gray;
-    padding: 2rem;
-    border-radius: 0.75rem;
+    background-color: $color-blue;
+    color: $color-white;
+    padding: $space-800;
+    border-radius: $border-radius-regular * 2;
     text-align: center;
     max-width: 32rem;
-    font-size: 1.25rem;
+    font-size: $font-size-base;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin: $space-400 auto $space-600 auto;
   }
 
   button {
-    margin-right: 0.5rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.5rem;
+    margin-right: $space-200;
+    padding: $space-200 $space-600;
+    border-radius: $border-radius-regular;
+    font-size: $font-size-base;
     border: none;
     cursor: pointer;
     background: white; 
 
     &:hover {
-      background: gray;
+      border:  2px solid rgba($color-blue, 0.2);
+      border-radius: $border-radius-regular;
+      background-color: rgba($color-blue, 0.2);
     }
 
     &:active {
-      background: blue;
+      background: $color-blue;
     }
   }
+}
+
+.stop {
+    display: inline-block;
+    align-self: flex-start;
+    margin: $space-400 auto 0 auto;
+    padding: $space-100 $space-400;
+
+    #button-stop {
+      padding: $space-100 $space-400;
+      border-radius: $border-radius-regular;
+      text-decoration: none;
+      border: none;
+      background-color: $color-blue;
+      color: $color-white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 16px rgb(0 0 0 / 20%);
+        background-color: color.scale($color-blue, $lightness: 5%);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 3px 8px rgb(0 0 0 / 15%);
+      }
+    }
 }

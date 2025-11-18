@@ -1,7 +1,7 @@
 /* Global styles and variables */
 
 @font-face {
-  font-family: "Inter";
+  font-family: Inter;
   src: url("../font/Inter/static/Inter_18pt-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
@@ -10,6 +10,7 @@
 // Sass variables 
 $font-size-base: 16px;
 $font-size-headings: 6rem;
+$font-size-underheadings: 3rem;
 $space-100: 0.25rem; 
 $space-200: 0.5rem;
 $space-300: 0.75rem;
@@ -29,7 +30,7 @@ $color-white: #fff;
 $color-black: #000;
 $color-blue: #0c223f;
 $color-protection: rgb(0 0 0 / 45%);
-$color-protection-dark: rgba(0, 0, 0, 0.5);
+$color-protection-dark: rgb(0 0 0 / 50%);
 $width-offset: calc(100% - (2 * $offset));
 $vertical-space-small: calc($gutter * 1);
 $vertical-space-large: calc($gutter * 1.5);
@@ -49,9 +50,12 @@ body, html {
 }
 
 :root {
+  /* Letur stillingar */
   --font-size-base: #($font-size-base);
   --font-size-headings: #($font-size-headings);
-
+  --font-family-base: #($font-family-base);
+  --font-family-heading: #($font-family-heading);
+  
   /* Grunn bilið okkar er 1rem == 16px */
   --spacing: #($spacing);
 
@@ -84,10 +88,7 @@ body, html {
   --color-black: #($color-black);
   --color-protection: #($color-protection);
 
-  /* Letur stillingar */
-  --font-size-base: #($font-size-base);
-  --font-family-base: #($font-family-base);
-  --font-family-heading: #($font-family-heading);
+  
 }
 
 @media (width >= 700px) {

@@ -2,12 +2,15 @@ import { fetchQ } from "./fetchQ";
 import { mapRowToObject } from "./mapObject";
 
 /**
- * Fall sem síar út 
- * @param {*} databasePath 
- * @param {*} nrForm 
- * @param {*} flokkarSelect 
- * @param {*} erfidiSelect 
- * @returns 
+ * Fall sem sækir random fjölda spurninga úr gagnagrunni í samræmi við input notanda "nr"
+ * síar þær eftir flokki og erfiðleikastigi ef notandi velur það 
+ * skilar niðurstöðum í resultscontainer með resultsQ fallinu og uppfærir URL samkvæmt síum
+ *  
+ * @param {string} databasePath - URL á gagnagrunnskrána (csv)
+ * @param {HTMLFormElement} nrForm - HTML form sem inniheldur input á fjölda spurninga (#nr)
+ * @param {HTMLFormElement} flokkarSelect - HTML select fyrir ákveðinn flokk (er "" ef enginn flokkur er valinn)
+ * @param {HTMLFormElement} erfidiSelect - HTML select fyrir ákveðið erfiðleikastig (er "" ef enginn flokkur er valinn)
+ * @returns {Promise<Question[]>} - skilar lista af random spurningum sem uppfylla skilyrði gefin
  */
 export async function searchQ(databasePath, nrForm, flokkarSelect, erfidiSelect) {
     const number = nrForm.querySelector("#nr");

@@ -13,51 +13,69 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Forsíða</a>
+        </li>
+        <li><strong>Spurningarleikurinn</strong></li>
+        <li>
+          <a class="trivia" href="https://trivia.is/">Trivia.is</a>
+        </li>
+      </ul>
+    </nav>
     <main class="main-spurningar">
+      <h2>Hannaðu spurningaleikinn þinn!</h2>
+      <div id="texti">
+        <p>Til að hefja leikinn þá þarftu að setja hann upp. Byrjaðu á því að velja hversu margar spurningar þú vilt hafa, hvort það er einhver flokkur og/eða erfiðleiki sem þú vilt halda þig við og leitaðu!</p>
+        <p>Þegar þú ert tilbúin þá ýtirðu á SPILA og hefur leikinn...</p>
+      </div>
       <div class="akveda-spurningar">
-        <h2>Hannaðu spurningaleikinn þinn!</h2>
-        <form id="form-nr" action="#" method="get" aria-label="Number of questions chosen">
-            <input  id="nr" name="nr" type="number" min="1" step="1" inputMode="search" placeholder="i.e. 1, 2..."/>
-            <button id="button-leita">Leita</button>
-            <button id="button-hreinsa">Hreinsa spurningarlista</button>
-        </form>
-        <form id="form-flokkar" action="#" method="get" aria-label="Filter questions based on category">
-            <select id="flokkar">
-              <option value="">Allir flokkar</option>
-              <option value="Almenn kunnátta">Almenn kunnátta</option>
-              <option value="Náttúra og vísindi">Náttúra og vísindi</option>
-              <option value="Bókmenntir og listir">Bókmenntir og listir</option>
-              <option value="Saga">Saga</option>
-              <option value="Landafræði">Landafræði</option>
-              <option value="Skemmtun og afþreying">Skemmtun og afþreying</option>
-              <option value="Íþróttir og tómstundir">Íþróttir og tómstundir</option>
+        <div class="filter">
+          <form id="form-flokkar" action="#" method="get" aria-label="Filter questions based on category">
+              <select id="flokkar">
+                <option value="">Allir flokkar</option>
+                <option value="Almenn kunnátta">Almenn kunnátta</option>
+                <option value="Náttúra og vísindi">Náttúra og vísindi</option>
+                <option value="Bókmenntir og listir">Bókmenntir og listir</option>
+                <option value="Saga">Saga</option>
+                <option value="Landafræði">Landafræði</option>
+                <option value="Skemmtun og afþreying">Skemmtun og afþreying</option>
+                <option value="Íþróttir og tómstundir">Íþróttir og tómstundir</option>
+              </select>
+          </form>
+          <form id="form-erfidleikastig">
+            <select id="erfidleikastig">
+              <option value="">Öll erfiðleikastig</option>
+              <option value="Létt">Létt</option>
+              <option value="Meðal">Meðal</option>
+              <option value="Erfið">Erfið</option>
             </select>
-        </form>
-        <form id="form-erfidleikastig">
-          <select id="erfidleikastig">
-            <option value="">Öll erfiðleikastig</option>
-            <option value="Létt">Létt</option>
-            <option value="Meðal">Meðal</option>
-            <option value="Erfið">Erfið</option>
-          </select>
-        </form>
-
-        <div class="spila">
-          <button id="button-spila"> Spila</button>
+          </form>
+          <form id="form-nr" action="#" method="get" aria-label="Number of questions chosen">
+            <div class="leita">
+                <input  id="nr" name="nr" type="number" min="1" step="1" inputMode="search" placeholder="i.e. 1, 2..."/>
+                <button id="button-leita">Leita</button>
+            </div>
+            <button id="button-hreinsa">Hreinsa spurningarlista</button>
+          </form>
+          
         </div>
-        
-        <a id="button-forsida" href="../index.html">Fara aftur á forsíðu</a>
+        <div class="spila">
+          <button id="button-spila">&#8594; Spila &#8592;</button>
+        </div>
 
         <div id="spurningar-results" class="spurningar-results"> </div>
 
+        <a id="button-forsida" href="../index.html">&#8592; Fara aftur á forsíðu</a>
       </div> 
       <div id="game-screen" class="leikjaskjar hidden">
         <h1>Pubquiz</h1>
         <h3>
             Hægt er að fletta fram og tilbaka á milli spurninga með vinstri og hægri
             örva tökkunum ásamt því að geta birt svarið og falið það með spacebar takkanum.
-            Einnig er hægt að fara í fullscreen með því að ýta á takkann "f". Njótið!
         </h3>
+        <h3>Einnig er hægt að fara í fullscreen með því að ýta á takkann "f". Njótið!</h3>
         <div id="spurningar-nanari-upplysingar">
             <div id="spurninga-flokkur"></div>
             <div id="spurninga-undirflokkur"></div>
@@ -67,15 +85,20 @@
           <button id="button-til-baka">&#8592; Til baka</button>
           <button id="button-svar">&#128064; Sýna svar</button>
           <button id="button-next">Næsta &#8594;</button>
-          <div id="stop">
-            <a id="button-stop" href="spurningarSpila.html">Hætta að spila</a>
-          </div>
         </div>
+      </div>
+      <div class="stop">
+        <a id="button-stop" href="spurningarSpila.html">Hætta að spila</a>
+      </div>
     </main>
     <footer>
       <p>Upplýsingar um spurningarnar í gagnagrunninum og bakgrunn vefsins má finna 
         <a id="footer-info" href="https://github.com/sveinn-steinarsson/is-trivia-questions">hér</a>
       </p>
+      <div class="github-links">
+        <a class="github-glp" href="https://github.com/gudrunliljapals"><img width="17" src="/src/myndir/github-mark.svg" alt="Github logo">gudrunliljapals</a>
+        <a class="github-DA" href="https://github.com/DavidAsmunds"><img width="17" src="/src/myndir/github-mark.svg" alt="Github logo">DavidAsmunds</a>
+      </div>
     </footer>
   </body>
 </html>

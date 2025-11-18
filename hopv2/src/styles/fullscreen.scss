@@ -1,7 +1,9 @@
-:fullscreen {
-  background: white;
-}
 
-:-moz-full-screen {
-  background: white;
+/* stillingar fyrir fullscreen virkni */
+
+/* styles/fullscreen.scss */
+@use "./base.scss" as *;
+
+:fullscreen {
+  background: $color-white;
 }
