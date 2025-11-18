@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang=is><script type=importmap>{"imports":{"gXCop":"/questions.382fc980.csv"}}</script><link rel=icon href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>"><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1"><title>Hópverkefni 2 - Pubquiz</title><link rel=stylesheet href=/hopv2.2f34adc8.css><script type=module src=/hopv2.7bb76e80.js></script><body>
+    <nav>
+      <ul>
+        <li>
+          <a href=/index.html>Forsíða</a>
+        </li>
+        <li><strong>Spurningarleikurinn</strong></li>
+        <li>
+          <a class=trivia href=https://trivia.is/>Trivia.is</a>
+        </li>
+      </ul>
+    </nav>
+    <main class=main-spurningar>
+      <h2>Hannaðu spurningaleikinn þinn!</h2>
+      <div id=texti>
+        <p>Til að hefja leikinn þá þarftu að setja hann upp. Byrjaðu á því að velja hversu margar spurningar þú vilt hafa, hvort það er einhver flokkur og/eða erfiðleiki sem þú vilt halda þig við og leitaðu!</p>
+        <p>Þegar þú ert tilbúin þá ýtirðu á SPILA og hefur leikinn...</p>
+      </div>
+      <div class=akveda-spurningar>
+        <div class=filter>
+          <form id=form-flokkar action=# aria-label="Filter questions based on category">
+              <select id=flokkar>
+                <option value>Allir flokkar</option>
+                <option value="Almenn kunnátta">Almenn kunnátta</option>
+                <option value="Náttúra og vísindi">Náttúra og vísindi</option>
+                <option value="Bókmenntir og listir">Bókmenntir og listir</option>
+                <option value=Saga>Saga</option>
+                <option value=Landafræði>Landafræði</option>
+                <option value="Skemmtun og afþreying">Skemmtun og afþreying</option>
+                <option value="Íþróttir og tómstundir">Íþróttir og tómstundir</option>
+              </select>
+          </form>
+          <form id=form-erfidleikastig>
+            <select id=erfidleikastig>
+              <option value>Öll erfiðleikastig</option>
+              <option value=Létt>Létt</option>
+              <option value=Meðal>Meðal</option>
+              <option value=Erfið>Erfið</option>
+            </select>
+          </form>
+          <form id=form-nr action=# aria-label="Number of questions chosen">
+            <div class=leita>
+                <input id=nr name=nr type=number min=1 step=1 inputmode=search placeholder="i.e. 1, 2...">
+                <button id=button-leita>Leita</button>
+            </div>
+            <button id=button-hreinsa>Hreinsa spurningarlista</button>
+          </form>
+          
+        </div>
+        <div class=spila>
+          <button id=button-spila>→ Spila ←</button>
+        </div>
+
+        <div id=spurningar-results class=spurningar-results> </div>
+
+        <a id=button-forsida href=/index.html>← Fara aftur á forsíðu</a>
+      </div> 
+      <div id=game-screen class="hidden leikjaskjar">
+        <h1>Pubquiz</h1>
+        <h3>
+            Hægt er að fletta fram og tilbaka á milli spurninga með vinstri og hægri
+            örva tökkunum ásamt því að geta birt svarið og falið það með spacebar takkanum.
+        </h3>
+        <h3>Einnig er hægt að fara í fullscreen með því að ýta á takkann "f". Njótið!</h3>
+        <div id=spurningar-nanari-upplysingar>
+            <div id=spurninga-flokkur></div>
+            <div id=spurninga-undirflokkur></div>
+            <div id=spurninga-erfidleiki></div>
+        </div>
+        <div id=spurninga-box></div>
+          <button id=button-til-baka>← Til baka</button>
+          <button id=button-svar>👀 Sýna svar</button>
+          <button id=button-next>Næsta →</button>
+        </div>
+      
+      <div class=stop>
+        <a id=button-stop href=/sidur/spurningarSpila.html>Hætta að spila</a>
+      </div>
+    </main>
+    <footer>
+      <p>Upplýsingar um spurningarnar í gagnagrunninum og bakgrunn vefsins má finna 
+        <a id=footer-info href=https://github.com/sveinn-steinarsson/is-trivia-questions>hér</a>
+      </p>
+      <div class=github-links>
+        <a class=github-glp href=https://github.com/gudrunliljapals><img width=17 src=/github-mark.5b233045.svg alt="Github logo">gudrunliljapals</a>
+        <a class=github-DA href=https://github.com/DavidAsmunds><img width=17 src=/github-mark.5b233045.svg alt="Github logo">DavidAsmunds</a>
+      </div>
+    </footer>
+  
+
+
+
+        
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="is"><head><script type="importmap">{"imports":{"83ttl":"/questions.7551c1bb.csv"}}</script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hópverkefni 2 - Pubquiz</title>
+    <link rel="stylesheet" href="/hopv2.4d663569.css">
+    <script type="module" src="/hopv2.1fcc916e.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="filter-spurningar">
+        <h2>Hannaðu spurningaleikinn þinn!</h2>
+        <form id="form-nr" action="#" method="get" aria-label="Number of questions chosen">
+            <input id="nr" name="nr" type="number" min="1" step="1" inputmode="search" placeholder="i.e. 1, 2...">
+            <button id="button-leita">Leita</button>
+            <button id="button-hreinsa">Hreinsa spurningarlista</button>
+        </form>
+        <form id="form-flokkar" action="#" method="get" aria-label="Filter questions based on category">
+            <select id="flokkar">
+              <option value="">Allir flokkar</option>
+              <option value="Almenn kunnátta">Almenn kunnátta</option>
+              <option value="Náttúra og vísindi">Náttúra og vísindi</option>
+              <option value="Bókmenntir og listir">Bókmenntir og listir</option>
+              <option value="Saga">Saga</option>
+              <option value="Landafræði">Landafræði</option>
+              <option value="Skemmtun og afþreying">Skemmtun og afþreying</option>
+              <option value="Íþróttir og tómstundir">Íþróttir og tómstundir</option>
+            </select>
+        </form>
+        <form id="form-erfidleikastig">
+          <select id="erfidleikastig">
+            <option value="">Öll erfiðleikastig</option>
+            <option value="Létt">Létt</option>
+            <option value="Meðal">Meðal</option>
+            <option value="Erfið">Erfið</option>
+          </select>
+        </form>
+      </div> 
+
+      <div class="spila">
+          <button id="button-spila"> Spila</button>
+      </div>
+      
+      <a id="button-forsida" href="/index.html">Fara aftur á forsíðu</a>
+
+      <div id="spurningar-results" class="spurningar-results"> </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+  
+
+
+
+</body></html>
