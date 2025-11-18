@@ -1,0 +1,15 @@
+/* skiglreina utility klasa fyrir aðgengi */
+
+/* styles/utils.scss */
+@use "./base.scss" as *;
+
+.sr-only:not(:focus, :active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* stylelint-disable-next-line property-no-deprecated */
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}

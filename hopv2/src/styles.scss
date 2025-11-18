@@ -1,17 +1,14 @@
+/**
+ * Grunn sass skrá, sækir aðrar skrár í *réttri* röð.
+ */
 @use "styles/base";
-@use "styles/nav.scss";
+@use "styles/nav";
 @use "styles/footer";
-
-@use "styles/grid";
-
-@use "styles/reset";
-
 @use "styles/utils";
-
 @use "styles/intro";
-@use "styles/upphafspur.scss";
+@use "styles/upphafspur";
 @use "styles/gamescreen";
-@use "styles/akvedaspurningar";
+@use "styles/mainspurningar";
 @use "styles/fullscreen";
 
 

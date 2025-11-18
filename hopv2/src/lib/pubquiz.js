@@ -1,6 +1,12 @@
-// skilgreina path að static spurninga database 
-//const flokkar = ["Flokkanúmer", "Undirflokkur", "Erfiðleikastig", "Gæðastig", "Spurning", "Svar"]; 6 lengd
 
+/**
+ * Setur upp AÐAL spurningaleikinn.
+ * Sér um að sýna núverandi spurningu, uppfæra upplýsingar um flokk og erfiðleikastig
+ * tengja buttons til að fara fram/tilbaka í spurningarleiknum og sýna svörin
+ *
+ * @param {QuestionRow[]} questions - listi af spurningum á array-formi
+ * @returns {void}
+ */
 export function byrjaleik(questions){
 
     const fjoldi=questions.length;
@@ -10,7 +16,6 @@ export function byrjaleik(questions){
 
     //nánari upplýsingar
     var flokkur = nuverandiSpurning[0];
-    var undirflokkur = nuverandiSpurning[1];
     var erfidleiki = nuverandiSpurning[2];
 
     const flokkar = {
@@ -30,16 +35,13 @@ export function byrjaleik(questions){
     }
 
     document.getElementById("spurninga-flokkur").textContent=flokkar[flokkur];
-    document.getElementById("spurninga-undirflokkur").textContent=undirflokkur;
     document.getElementById("spurninga-erfidleiki").textContent=("Erfiðleikastig: "+erfidleikastig[erfidleiki]);
 
     //fall til að uppfæra nanari uppl. þegar skipt er um spurningar
     function uppfaeraDeets(){
         flokkur = nuverandiSpurning[0];
-        undirflokkur = nuverandiSpurning[1];
         erfidleiki = nuverandiSpurning[2];
         document.getElementById("spurninga-flokkur").textContent=flokkar[flokkur];
-        document.getElementById("spurninga-undirflokkur").textContent=undirflokkur;
         document.getElementById("spurninga-erfidleiki").textContent=("Erfiðleikastig: "+erfidleikastig[erfidleiki]);
 
     }

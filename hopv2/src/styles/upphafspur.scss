@@ -1,4 +1,4 @@
-/* */
+/* hönnun á upphafsstilla button á index síðu */
 
 /* styles/upphafspur.scss */
 @use "./base.scss" as *;
@@ -20,11 +20,9 @@
         align-self: center;
         margin-top: auto;
         margin-bottom: $space-400;
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
         padding: $space-200 $space-600;
         border-radius: $border-radius-regular;
         border: none;
