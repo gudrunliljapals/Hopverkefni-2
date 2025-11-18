@@ -1,9 +1,12 @@
 # Hópverkefni 2
 
 ## Stutt lýsing
-Vefsíða sem inniheldur helstu atriði sem þarf til að spila árangursríkan spurningarleik. 
+Vefsíða sem útfærir spurningarleik **Pubquiz style** með öllum helstu grunnvirkni sem þarf til að spila árangursríkan spurningarleik. 
 
-Spurningarnar eru geymdar í .csv skrá sem skiptist upp eftirfarandi: 
+Spurningarnar eru lesnar úr `.csv` skrá sem er breytt í JSON format og birtir spurningur í
+
+
+sem skiptist upp eftirfarandi: 
 
 | Dálkanúmer | Valfrjálst | Lýsing |
 |---|---|---|
@@ -74,25 +77,42 @@ npm run lint
 
 ## Skráaruppbygging
 ```
+README.md  # þessi skrá
 hop2/   
-      ├── font/              # static skrár 
+      ├── font/                # leturgerð
       ├── src/                 # source mappa fyrir verkefnið
-             ├── app/          # Next.js App router fyrir síður og grunnútlit
-                    ├── globals.css      # almennt útlit (Tailwind)
-                    ├── globe.svg        # SVG mynd 
-                    ├── layout.jsx       # layout fyrir all efni
-                    └── page.jsx         # aðalsíðan 
-             └── lib/          # js hjálparföll og viðmót fyrir API
-                    ├── fetchapi.js      # sækir gögn frá REST Web API
-                    ├── globe.js         # js skrá fyrir hnöttinn
-                    ├── searchCountry.js # js skrá fyrir leit í gagnagrunni
-                    └── utils.js         # js hjálparföll 
-      ├──.gitignore           # hunsa við git commit
-      ├── README.md            # þessi skrá
+             ├── database/          # gagnagrunnur
+                         └── questions.csv   # gagnagrunnurinn í .csv
+             ├── lib/               # js hjálparföll 
+                    ├── convertGame.js       # breytir gagnagrunni úr objects -> 2D array
+                    ├── elements.js          # js hjálparföll fyrir lista og tæma 
+                    ├── fetchQ.js            # sækir gögn frá gagnagrunni og parsar í array format
+                    ├── mapObject.js         # breytir gagnagrunni úr 2D array -> objects
+                    ├── pubquiz.js           # spila leikinn sjálfan
+                    ├── resultsQ.js          # birta spurningar
+                    └── searchQ.js           # js skrá fyrir leit í gagnagrunni eftir filter
+             ├── myndir/   # mappa með myndum fyrir vef
+             ├── sidur/
+                      └── spurningarSpila.html       # leikjasíðan fyrir upphafsstillingu og leik
+             ├── styles/            # mappa fyrir útlit á síðu
+                       ├── base.scss         # grunnstillingar á breytum 
+                       ├── footer.scss       # stíll á footer
+                       ├── fullscreen.scss   # stillingar á fullscreen útliti
+                       ├── gamescreen.scss   # útlitið á spurningarleiknum eftir upphafsstillingar
+                       ├── intro.scss        # útlitið á index síðunni
+                       ├── mainspurningar.scss  # útlitið á filter og birta spurningar fyrir leikinn 
+                       ├── nav.scss          # útlitið á valmynd
+                       ├── upphafspur.scss   # útlitið á takkanum neðst á index
+                       └── utils.scss        # stilling fyrir read only view
+             ├── index.html    # aðal forsíðan
+             ├── main.js       # aðal javascript skráin fyrir allar virknir á síðunni
+             └── styles.scss   # aðal scss skráin sem útfærir útlitið á síðunni í heild
+      ├── .gitignore           # hunsa við git commit
+      ├── .stylelintrc.json    # stillingar fyrir stylelint       
       ├── eslint.config.mjs    # stillingar fyrir eslint
       ├── package-lock.json    # læst dependencies
       └── package.json         # dependencies og npm script/keyrslur
 ```
 ## Höfundar
-
-Davíð Ásmundsson og Guðrún Lilja Pálsdóttir 
+Guðrún Lilja Pálsdóttir *[gudrunliljapals](https://github.com/gudrunliljapals)* 
+Davíð Ásmundsson  *[DavidAsmunds](https://github.com/DavidAsmunds)* 
